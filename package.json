@@ -1,10 +1,12 @@
 {
-  "name": "either.ts",
+  "name": "@luizcgr/either.ts",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
