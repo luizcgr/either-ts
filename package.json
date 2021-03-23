@@ -1,6 +1,6 @@
 {
   "name": "@luizcgr/either-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
     "tslint": "^6.1.3",
     "typescript": "^4.2.3"
   },
-  "homepage": "https://github.com/luizcgr/either.ts",
+  "homepage": "https://github.com/luizcgr/either-ts",
   "bugs": {
-    "url": "https://github.com/luizcgr/either.ts/issues"
+    "url": "https://github.com/luizcgr/either-ts/issues"
   }
 }
