@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
-    "build": "tsc"
+    "build": "tsc && tslint -p . && jest --coverage"
   },
   "keywords": [],
   "author": "",
