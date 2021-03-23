@@ -2,11 +2,11 @@
   "name": "@luizcgr/either-ts",
   "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/either.js",
+  "types": "lib/either.d.ts",
   "scripts": {
     "test": "jest --coverage",
-    "build": "tsc && tslint -p . && jest --coverage"
+    "build": "tsc --declaration && tslint -p . && jest --coverage"
   },
   "keywords": [],
   "author": "",
