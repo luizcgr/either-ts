@@ -1,14 +1,23 @@
 {
   "name": "@luizcgr/either-ts",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "",
-  "main": "lib/either.js",
-  "types": "lib/either.d.ts",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --coverage",
     "build": "tsc --declaration && tslint -p . && jest --coverage"
   },
-  "keywords": [],
+  "keywords": [
+    "Functional",
+    "Programming",
+    "Typescript",
+    "Either",
+    "Fold",
+    "Right",
+    "Left"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,5 +30,12 @@
   "homepage": "https://github.com/luizcgr/either-ts",
   "bugs": {
     "url": "https://github.com/luizcgr/either-ts/issues"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luizcgr/either-ts.git"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
