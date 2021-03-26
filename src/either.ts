@@ -1,10 +1,39 @@
-import { Left } from "./left";
-import { Right } from "./right";
+class Right<L, R> {
+  constructor(_: L, private _value: R) {}
 
-export type Either<L, R> = Left<L, R> | Right<L, R>;
+  getRight = (): R => this._value
 
-export type EitherP<L, R> = Promise<Either<L, R>>;
+  getLeft = (): L => null
 
-export const right = <L, R>(value: R) => new Right<L, R>(null, value);
+  isRight(): boolean {
+    return true
+  }
 
-export const left = <L, R>(value: L) => new Left<L, R>(value, null);
+  fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
+    return rightFn(this._value)
+  }
+}
+
+class Left<L, R> {
+  constructor(private _value: L, _: R) {}
+
+  getLeft = (): L => this._value
+
+  getRight = (): R => null
+
+  isRight = (): boolean => {
+    return false
+  }
+
+  fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
+    return leftFn(this._value)
+  }
+}
+
+export type Either<L, R> = Left<L, R> | Right<L, R>
+
+export type EitherP<L, R> = Promise<Either<L, R>>
+
+export const right = <L, R>(value: R) => new Right<L, R>(null, value)
+
+export const left = <L, R>(value: L) => new Left<L, R>(value, null)
