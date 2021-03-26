@@ -51,7 +51,7 @@ Folds the Either object in two parts: left and right.
 
 ```typescript
 const eitherResult = doAnything() // Left - SomeError | Right - string
-eitherResult.fold(
+return eitherResult.fold(
   (err) => console.log(err.message), // err is an instance of SomeError class indicated in left either part
   (doc) => console.log(doc), // doc is an instance of string class indicated in right either part
 )
@@ -120,9 +120,9 @@ export class SearchUserByLogin {
     // EitherP<UserError, User> === Promise<Either<UserError, User>>
     try {
       const eitherResult = await this._userRepository.findByLogin(login)
-      return eitherResult<EitherP<UserError, User>>(
-        (err) => left(new UserError('User not found')),
-        (user) => right(user),
+      return eitherResult.fold<EitherP<UserError, User>>(
+        async (err) => left(new UserError('User not found')),
+        async (user) => right(user),
       )
     } catch (err) {
       return left(new UserError('Connection error'))
