@@ -9,6 +9,10 @@ class Right<L, R> {
     return true
   }
 
+  isLeft = (): boolean => {
+    return false
+  }
+
   fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
     return rightFn(this._value)
   }
@@ -23,6 +27,10 @@ class Left<L, R> {
 
   isRight = (): boolean => {
     return false
+  }
+
+  isLeft = (): boolean => {
+    return true
   }
 
   fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
