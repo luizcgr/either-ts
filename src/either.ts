@@ -13,7 +13,7 @@ class Right<L, R> {
     return false
   }
 
-  fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
+  fold<T>(leftFn: (_: L) => T | void | void, rightFn: (_: R) => T): T | void {
     return rightFn(this._value)
   }
 }
@@ -33,7 +33,7 @@ class Left<L, R> {
     return true
   }
 
-  fold<T>(leftFn: (_: L) => T, rightFn: (_: R) => T): T {
+  fold<T>(leftFn: (_: L) => T | void, rightFn: (_: R) => T): T | void {
     return leftFn(this._value)
   }
 }
